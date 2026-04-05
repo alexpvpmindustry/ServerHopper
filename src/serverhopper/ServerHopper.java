@@ -1,33 +1,34 @@
 package serverhopper;
 
 import arc.*;
-// import arc.math.*;
-// import arc.struct.*;
+import arc.math.*;
+import arc.struct.*;
 import arc.util.*;
 // import com.mongodb.client.model.UpdateOneModel;
 // import com.mongodb.client.model.WriteModel;
 import mindustry.Vars;
-// import mindustry.content.*;
-// import mindustry.core.GameState.*;
+import mindustry.content.*;
+import mindustry.core.GameState.*;
 import mindustry.core.NetServer.*;
 import mindustry.game.EventType.*;
 import mindustry.game.*;
-// import mindustry.game.Schematic.*;
-// import mindustry.game.Teams.*;
-// import mindustry.gen.*;
-// import mindustry.mod.*;
+import mindustry.game.Schematic.*;
+import mindustry.game.Teams.*;
+import mindustry.gen.*;
+import mindustry.mod.*;
 import mindustry.net.Packets.*;
-// import mindustry.type.*;
-// import mindustry.world.*;
-// import mindustry.world.blocks.storage.*;
-// import org.bson.Document;
+import mindustry.type.*;
+import mindustry.world.*;
+import mindustry.world.blocks.storage.*;
+import org.bson.Document;
 
-import java.util.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static arc.util.Log.*;
 // import static com.mongodb.client.model.Updates.*;
 // import static com.mongodb.client.model.Updates.push;
-// import static java.lang.Math.max;
+import static java.lang.Math.max;
 import static mindustry.Vars.*;
 
 public class ServerHopper extends Plugin{

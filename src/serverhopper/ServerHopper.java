@@ -1,29 +1,29 @@
 package serverhopper;
 
-import arc.*;
-import arc.math.*;
-import arc.struct.*;
+// import arc.*;
+// import arc.math.*;
+// import arc.struct.*;
 import arc.util.*;
 // import com.mongodb.client.model.UpdateOneModel;
 // import com.mongodb.client.model.WriteModel;
 import mindustry.Vars;
-import mindustry.content.*;
-import mindustry.core.GameState.*;
+// import mindustry.content.*;
+// import mindustry.core.GameState.*;
 import mindustry.core.NetServer.*;
 import mindustry.game.EventType.*;
 import mindustry.game.*;
-import mindustry.game.Schematic.*;
-import mindustry.game.Teams.*;
-import mindustry.gen.*;
-import mindustry.mod.*;
+// import mindustry.game.Schematic.*;
+// import mindustry.game.Teams.*;
+// import mindustry.gen.*;
+// import mindustry.mod.*;
 import mindustry.net.Packets.*;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.blocks.storage.*;
-import org.bson.Document;
+// import mindustry.type.*;
+// import mindustry.world.*;
+// import mindustry.world.blocks.storage.*;
+// import org.bson.Document;
 
-import java.util.Timer;
-import java.util.TimerTask;
+// import java.util.Timer;
+// import java.util.TimerTask;
 
 import static arc.util.Log.*;
 // import static com.mongodb.client.model.Updates.*;
@@ -69,8 +69,9 @@ public class ServerHopper extends Plugin{
 
     @Override
     public void init(){
-      // every hexServerCooldown, ping the hex server to check if it's up. If it's up, set hexserveractive to true and move all players to the hex server. If it's not up, set hexserveractive to false and kick all players with a message.
-        Timer.schedule(() -> { 
+      // every hexServerCooldown, ping the hex server to check if it's up. 
+      // If it's up, set hexserveractive to true and move all players to the hex server. 
+        Time.runTask(60f*20,() -> { // every 20 seconds
               Vars.net.pingHost(hexURL, hexPORT, host -> {
                   hexserveractive = true;
                   Call.infoMessage("[green]Hex server is up! Moving players to hex server...");
@@ -82,7 +83,7 @@ public class ServerHopper extends Plugin{
                   failedConnectionCounter++;
               }); 
             
-        }, 20*1000, 20*1000); // check every 20 seconds
+        }); // check every 20 seconds
 
 
 

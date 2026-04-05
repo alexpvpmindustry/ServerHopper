@@ -27,12 +27,12 @@ jobs:
     # - name: Increment version
     #   run: node increment-version.js ${{ github.run_number }} 
 
-    - name: Download Mindustry v156 jars
-      run: |
-        mkdir libs
-        curl -L -o libs/server.jar https://github.com/Anuken/Mindustry/releases/download/v156.2/server-release.jar
-        curl -L -o libs/Mindustry.jar https://github.com/Anuken/Mindustry/releases/download/v156.2/Mindustry.jar
-        curl -L -o libs/dependencies.jar https://github.com/Anuken/Mindustry/releases/download/v156.2/dependencies.jar
+    #- name: Download Mindustry v156 jars
+    #  run: |
+    #    mkdir libs
+    #    curl -L -o libs/server.jar https://github.com/Anuken/Mindustry/releases/download/v156.2/server-release.jar
+    #    curl -L -o libs/Mindustry.jar https://github.com/Anuken/Mindustry/releases/download/v156.2/Mindustry.jar
+    #    curl -L -o libs/dependencies.jar https://github.com/Anuken/Mindustry/releases/download/v156.2/dependencies.jar
 
     - name: Build with Gradle
       run: ./gradlew jar

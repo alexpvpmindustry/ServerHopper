@@ -23,7 +23,7 @@ dependencies{
     compileOnly files("libs/dependencies.jar")
     // implementation 'org.mongodb:mongo-java-driver:3.12.7'
     //compileOnly "com.github.Anuken.Mindustry:server:$mindustryVersion"
-    implementation group: 'org.json', name: 'json', version: '20231013'
+    //implementation group: 'org.json', name: 'json', version: '20231013'
 }
 jar{
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE

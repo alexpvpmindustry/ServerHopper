@@ -8,8 +8,6 @@ import mindustry.mod.*;
 public class ServerHopper extends Plugin{
     //private final static int leaderboardTime = 60 * 60 * 2;
     private boolean hexserveractive = false;
-    // private CooldownTimer hexServerCooldown = new CooldownTimer(60 * 20);
-    // 20 seconds cooldown before trying to connect to hex server again after a failed attempt
     private int failedConnectionCounter = 0;
     // private static final String hexURL = "172.245.187.143"; // attack usa 
     // private static final int hexPORT = 25588; // attack usa
@@ -23,7 +21,7 @@ public class ServerHopper extends Plugin{
     }
 
     private void schedulePing(){
-        arc.util.Time.runTask(20f, () -> { // loops every 20 seconds
+        arc.util.Time.runTask(60f*20f, () -> { // loops every 20 seconds
             Log.info("ping hex server %s".formatted(hexserveractive));
             Vars.net.pingHost(hexURL, hexPORT, result -> {
                 hexserveractive = true;

@@ -34,7 +34,7 @@ dependencies{
 }
 jar{
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    archiveFileName = "AlexHex.jar"
+    archiveFileName = "ServerHopper.jar"
     from{
         configurations.runtimeClasspath.collect{it.isDirectory() ? it : zipTree(it)}
     }
@@ -42,8 +42,8 @@ jar{
         include "plugin.hjson"
     }
 }
-tasks.register('copyJar', Copy) {
-    from jar // copies output of file produced from jar task
-    into "${buildDir}\\..\\gradle\\test_Server\\config\\mods\\"
-}
-build.finalizedBy copyJar
+// tasks.register('copyJar', Copy) {
+//     from jar // copies output of file produced from jar task
+//     into "${buildDir}\\..\\gradle\\test_Server\\config\\mods\\"
+// }
+// build.finalizedBy copyJar

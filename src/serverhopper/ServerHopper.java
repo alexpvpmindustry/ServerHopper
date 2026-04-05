@@ -1,24 +1,24 @@
 package serverhopper;
 
-// import arc.*;
-// import arc.math.*;
-// import arc.struct.*;
+import arc.*;
+import arc.math.*;
+import arc.struct.*;
 import arc.util.*;
 // import com.mongodb.client.model.UpdateOneModel;
 // import com.mongodb.client.model.WriteModel;
 import mindustry.Vars;
-// import mindustry.content.*;
-// import mindustry.core.GameState.*;
+import mindustry.content.*;
+import mindustry.core.GameState.*;
 import mindustry.core.NetServer.*;
 import mindustry.game.EventType.*;
 import mindustry.game.*;
-// import mindustry.game.Schematic.*;
-// import mindustry.game.Teams.*;
-// import mindustry.gen.*;
-// import mindustry.mod.*;
+import mindustry.game.Schematic.*;
+import mindustry.game.Teams.*;
+import mindustry.gen.*;
+import mindustry.mod.*;
 import mindustry.net.Packets.*;
-// import mindustry.type.*;
-// import mindustry.world.*;
+import mindustry.type.*;
+import mindustry.world.*;
 // import mindustry.world.blocks.storage.*;
 // import org.bson.Document;
 
@@ -32,20 +32,7 @@ import static java.lang.Math.max;
 import static mindustry.Vars.*;
 
 public class ServerHopper extends Plugin{
-    //in seconds
-    // public static final float spawnDelay = 60 * 4;
-    // //health requirement needed to capture a hex; no longer used
-    // public static final float healthRequirement = 3500;
-    // //item requirement to captured a hex
-    // public static final int itemRequirement = 3; // was 80
-
-    // public static final int messageTime = 1;
-    // //in ticks: 60 minutes
-    // private final static int roundTime = 60 * 60 * 30; // should be 60*60*30
-    //in ticks: 2 minutes
     //private final static int leaderboardTime = 60 * 60 * 2;
-
-    // private final static int updateTime = 60 * 2;
     private boolean hexserveractive = false;
     // private CooldownTimer hexServerCooldown = new CooldownTimer(60 * 20);
     // 20 seconds cooldown before trying to connect to hex server again after a failed attempt
@@ -60,13 +47,6 @@ public class ServerHopper extends Plugin{
     //private static final int hexPORT = 6889; // racknerd FN test server
     private static final String hexURL = "172.245.187.143"; // hex
     private static final int hexPORT = 6868; // hex
-
-    // public ObjectSet<String> joinedPlayers = new ObjectSet<>();
-    // private List<Long> allMMR = new ArrayList<>();
-    // public HashMap<String, Long> PlayersMMR = new HashMap<>();
-
-    // private String mongoURL = "";
-
     @Override
     public void init(){
       // every hexServerCooldown, ping the hex server to check if it's up. 
@@ -86,16 +66,6 @@ public class ServerHopper extends Plugin{
         }); // check every 20 seconds
 
 
-
-        //MMRsystem = MMR_config.getInstance();
-        // PlayersWhoLeft = new HashMap<>();
-        // org.json.JSONObject configData = configReader.get("config.alex");
-        // assert configData != null;
-        // if (configData.has("mongoURL")) {
-        //     mongoURL = configData.getString("mongoURL");
-        // }
-
-
         Events.on(PlayerJoin.class, event -> {
           String playeruuid = event.player.uuid();
           // After a player joins, check every 10 seconds, if the server can be pinged.
@@ -103,16 +73,6 @@ public class ServerHopper extends Plugin{
           // If the server cannot be pinged, keep the player on the current server and check again after 15 seconds.
             // String playeruuid = event.player.uuid();
             // if(active() && PlayersWhoLeft.containsKey(playeruuid)){
-            //     int prevTeamid = PlayersWhoLeft.get(playeruuid);
-            //     Team prevTeam = Team.get(prevTeamid);
-            //     if (prevTeam==Team.derelict){
-            //         PlayersWhoLeft.remove(playeruuid);
-            //         return;
-            //     }
-            //     // event.player.unit().kill();
-            //     // event.player.team(prevTeam);
-            //     // event.player.sendMessage("Welcome back");
-            //     // return;
             // }
         });
 

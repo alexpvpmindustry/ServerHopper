@@ -1,35 +1,9 @@
 package serverhopper;
 
-import arc.*;
-//import arc.math.*;
-//import arc.struct.*;
 import arc.util.*;
-// import com.mongodb.client.model.UpdateOneModel;
-// import com.mongodb.client.model.WriteModel;
 import mindustry.Vars;
-//import mindustry.content.*;
-//import mindustry.core.GameState.*;
-//import mindustry.core.NetServer.*;
-import mindustry.game.EventType.*;
-//import mindustry.game.*;
-//import mindustry.game.Schematic.*;
-//import mindustry.game.Teams.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
-//import mindustry.net.Packets.*;
-//import mindustry.type.*;
-//import mindustry.world.*;
-// import mindustry.world.blocks.storage.*;
-// import org.bson.Document;
-
-// import java.util.Timer;
-// import java.util.TimerTask;
-
-//import static arc.util.Log.*;
-// import static com.mongodb.client.model.Updates.*;
-// import static com.mongodb.client.model.Updates.push;
-//import static java.lang.Math.max;
-//import static mindustry.Vars.*;
 
 public class ServerHopper extends Plugin{
     //private final static int leaderboardTime = 60 * 60 * 2;
@@ -37,10 +11,6 @@ public class ServerHopper extends Plugin{
     // private CooldownTimer hexServerCooldown = new CooldownTimer(60 * 20);
     // 20 seconds cooldown before trying to connect to hex server again after a failed attempt
     private int failedConnectionCounter = 0;
-    // private double counter = 0f;
-    // private int lastMin;
-    // public HashMap<String, Integer> PlayersWhoLeft;
-    //public MMR_config MMRsystem;
     // private static final String hexURL = "172.245.187.143"; // attack usa 
     // private static final int hexPORT = 25588; // attack usa
     //private static final String hexURL = "92.119.127.171"; // racknerd FN test server

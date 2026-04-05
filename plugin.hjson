@@ -1,0 +1,7 @@
+name: "ServerHopper",
+author: "alex",
+description: "A ServerHopper.",
+version: 1.9,
+main: "serverhopper.ServerHopper",
+minGameVersion: 155
+

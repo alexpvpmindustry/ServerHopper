@@ -9,7 +9,7 @@ public class ServerHopper extends Plugin{
     //private final static int leaderboardTime = 60 * 60 * 2;
     private boolean hexserveractive = false;
     private int failedConnectionCounter = 0;
-    // private static final String hexURL = "172.245.187.143"; // attack usa 
+    // private static final String hexURL = "172.245.187.143"; // attack usa
     // private static final int hexPORT = 25588; // attack usa
     //private static final String hexURL = "92.119.127.171"; // racknerd FN test server
     //private static final int hexPORT = 6889; // racknerd FN test server
@@ -21,8 +21,10 @@ public class ServerHopper extends Plugin{
     }
 
     private void schedulePing(){
-        arc.util.Time.runTask(60f*20f, () -> { // loops every 20 seconds
-            Log.info("ping hex server %s".formatted(hexserveractive));
+        //10 seconds
+        float refreshTime = 60f * 10f;
+        arc.util.Time.runTask(refreshTime, () -> { // loops every 20 seconds
+
             Vars.net.pingHost(hexURL, hexPORT, result -> {
                 hexserveractive = true;
                 Call.infoMessage("[green]Hex server is up! Moving players to hex server...");
@@ -34,7 +36,7 @@ public class ServerHopper extends Plugin{
                         (failedConnectionCounter > 0 ? " (Refreshed: " + failedConnectionCounter + ")" : ""));
                 failedConnectionCounter++;
             });
-
+            Log.info("ping hex server %s".formatted(hexserveractive));
             // reschedule itself (loop)
             schedulePing();
         });
